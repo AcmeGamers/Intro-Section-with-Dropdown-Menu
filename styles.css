@@ -36,6 +36,10 @@ p {
 }
 
 /* Components */
+main {
+  padding: 20px 40px;
+}
+
 button {
   background: transparent;
   border: 1px solid #000;
@@ -52,9 +56,6 @@ button:hover {
 }
 
 /* Classes */
-.container {
-  padding: 20px 40px;
-}
 
 /* Header */
 .desktop-display > nav > ul {
@@ -282,7 +283,18 @@ section {
   .mobile-display {
     display: inherit;
   }
+  main {
+    padding: 0;
+  }
+  section {
+    flex-direction: column !important;
+  }
+
   /* Header */
+  header {
+    padding: 10px 20px;
+    align-items: flex-end;
+  }
   header > div {
     background: white;
     position: absolute;
@@ -306,6 +318,11 @@ section {
   .mobile-menu {
     position: fixed;
     width: 65vw;
+    display: none;
+  }
+
+  .icon-menu {
+    height: 20px;
   }
   .close-menu {
     width: 30px;
@@ -353,9 +370,24 @@ section {
   }
 
   /*  */
-
+  body {
+    background: white;
+  }
   section {
     flex-direction: column;
+  }
+  section > div:nth-child(1) {
+    text-align: center;
+    align-items: center;
+  }
+  h1 {
+    margin-top: -30px;
+    margin-bottom: 0;
+    font-size: 8vw;
+    font-weight: 900;
+  }
+  p {
+    width: 90%;
   }
   .intro {
     order: 1;
@@ -363,6 +395,21 @@ section {
     padding: 0;
   }
   .image {
-    width: 100%;
+    width: 100vw;
+    height: 100vw !important;
+    height: auto;
+    background: url(images/image-hero-mobile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .clients {
+    margin-bottom: 30px;
+  }
+  .clients > img {
+    width: 20%;
+    margin-right: 10px;
+  }
+  .clients > img:nth-child(2) {
+    width: 15%;
   }
 }
