@@ -24,14 +24,15 @@ body {
 h1 {
   color: var(--primary);
   letter-spacing: 1.3px;
-  font-size: 60px;
+  font-size: 6vw;
   line-height: 1;
   margin-bottom: 30px;
 }
 p {
   line-height: 1.7;
   margin-bottom: 30px;
-  width: 60%;
+  /* width: 60%; */
+  font-size: 1.5vw;
   font-weight: 700;
 }
 
@@ -98,6 +99,7 @@ nav > ul > li {
 .dropdown ul li {
   padding-top: 5px;
   padding-bottom: 10px;
+  padding-left: 20px;
 }
 .dropdown ul li img {
   padding-right: 10px;
@@ -150,12 +152,20 @@ nav > ul > li {
 
 section {
   margin-top: 30px;
+  height: 80vh;
+  padding: 0 100px;
+}
+.section:nth-child(1) {
+  margin-right: 30px;
+}
+.section:nth-child(2) {
+  margin-left: 30px;
 }
 
 /* Section 1 */
 .intro {
   width: 50%;
-  padding: 50px 100px 0;
+  /* padding: 50px 100px 0; */
   align-items: flex-start;
 }
 .intro button {
@@ -182,6 +192,7 @@ section {
   background: url(images/image-hero-desktop.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Predefined CSS */
@@ -235,48 +246,47 @@ section {
 
 /* media query */
 @media screen and (max-width: 1000px) and (min-width: 680px) {
-  .card {
-    width: 90vw;
+  header > div {
+    font-size: 13px;
   }
-}
-
-@media screen and (max-width: 680px) {
-  main {
-    height: auto !important;
+  nav {
+    transform: translate(0, 5px);
   }
-  .card {
-    width: -webkit-fill-available;
-    flex-wrap: wrap;
-    border-radius: 20px;
+  nav > ul > li {
+    display: flex;
+    margin: 0px 12px;
   }
-
-  #values,
-  #calculation {
-    width: -webkit-fill-available;
+  .dropdown > ul {
+    transform: translate(-75px, 20px);
   }
-  #values {
-    margin-right: 0;
+  .dropdown:nth-child(1) > ul {
+    margin-right: -134px;
   }
-  #values > div:not(:first-child) {
-    margin-top: 0;
+  .dropdown:nth-child(2) ul {
+    margin-right: -98.9px;
   }
-  #values > div {
-    margin-bottom: 35px;
+  .dropdown > ul > li {
+    min-width: max-content;
+    padding: 20px;
   }
-  #calculation {
-    padding: 25px;
+  section {
+    padding: 0 50px;
   }
-  .price p:nth-child(2) {
-    font-size: 30px;
+  h1 {
+    font-size: 5.2vw;
+    margin-bottom: 0;
   }
-
-  .tip-button {
-    column-count: 2;
+  p {
+    font-size: 1.7vw;
+  }
+  .intro,
+  .image {
+    margin-left: 30px;
   }
 }
 
 /* Media Query */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 680px) {
   .desktop-display {
     display: none;
   }
@@ -287,6 +297,7 @@ section {
     padding: 0;
   }
   section {
+    padding: 0;
     flex-direction: column !important;
   }
 
@@ -304,17 +315,15 @@ section {
     flex-direction: column !important;
     z-index: 2;
   }
-
   header > div:before {
     position: fixed;
     content: "";
-    height: --webkit-fill-available;
+    height: 100vh;
     background: rgb(0, 0, 0, 50%);
-    width: 100%;
-    left: 0;
+    width: 80%;
+    left: -40vw;
     z-index: 1;
   }
-
   .mobile-menu {
     position: fixed;
     width: 65vw;
@@ -350,11 +359,14 @@ section {
     margin-top: 20px;
   }
   .mobile-menu .dropdown ul {
+    display: none;
     box-shadow: none;
     transform: translate(0, 0);
     padding: 0 20px;
   }
-
+  .mobile-menu .dropdown div {
+    transform: rotate(0);
+  }
   .mobile-menu .active div {
     transform: rotate(180deg);
   }
@@ -374,6 +386,7 @@ section {
     background: white;
   }
   section {
+    height: auto;
     flex-direction: column;
   }
   section > div:nth-child(1) {
@@ -387,6 +400,7 @@ section {
     font-weight: 900;
   }
   p {
+    font-size: 4vw;
     width: 90%;
   }
   .intro {
